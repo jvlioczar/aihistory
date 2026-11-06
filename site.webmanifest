@@ -1,0 +1,13 @@
+{
+  "name": "AI History Timeline",
+  "short_name": "AI History",
+  "description": "A bilingual museum of artificial intelligence, from 1843 to today.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ff3b5c",
+  "theme_color": "#ff3b5c",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

@@ -27,6 +27,7 @@
 <title>AI History Timeline</title>
 <meta name="description" content="AI History Timeline: a free, bilingual museum of artificial intelligence, from Ada Lovelace in 1843 to today. Every milestone backed by two articles from the major press, plus an AI glossary and free courses. Curated by Julio Cesar Prava.">
 <meta name="author" content="Julio Cesar Prava">
+<script src="https://biblioverse.org/superbar.js" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- fonts load without blocking the page: if Google Fonts is slow or blocked, the site still shows in system fonts -->
@@ -92,12 +93,7 @@ a { color: inherit; }
 /* light text on the cream panels reads better a shade lighter than on the coral page */
 .card, .term, .course, .sp, .ab-box, .promo-card, .noscript, .chain, .mini-card:hover, .mini-card[open] { --muted: var(--muted-s); }
 
-/* ---------- AI Library promo: top line + banner ---------- */
-.promo { display: block; background: var(--block); color: var(--block-ink); text-decoration: none; font-family: var(--f-mono); font-size: 12.5px; font-weight: 600; }
-.promo-in { max-width: 1120px; margin: 0 auto; padding: 8px var(--gutter); display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; text-align: center; }
-.promo-tag { font-family: var(--f-block); font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; font-size: 10.5px; background: var(--block-ink); color: var(--block); padding: 2px 8px; }
-.promo-go { font-weight: 800; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
-.promo:hover .promo-go { text-decoration-style: wavy; }
+/* ---------- AI Library promo card (bottom) ---------- */
 .promo-card { margin-top: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px 32px; flex-wrap: wrap; background: var(--surface); border: 2px solid var(--rule); box-shadow: 8px 8px 0 var(--shadow); padding: 30px 34px; }
 .promo-card > div { flex: 1 1 380px; min-width: 0; }
 .promo-kick { font-family: var(--f-block); font-size: 12px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; }
@@ -105,7 +101,14 @@ a { color: inherit; }
 .promo-card p { margin: 0; max-width: 62ch; }
 .promo-btn { display: inline-block; background: var(--block); color: var(--block-ink); text-decoration: none; font-family: var(--f-block); font-size: 14px; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; padding: 14px 22px; white-space: nowrap; transition: transform .15s, box-shadow .15s; }
 .promo-btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--accent); }
-@media (max-width: 560px) { .promo-txt { display: none; } .promo-card { padding: 22px 20px; box-shadow: 5px 5px 0 var(--shadow); } .promo-btn { width: 100%; text-align: center; } }
+@media (max-width: 560px) { .promo-card { padding: 22px 20px; box-shadow: 5px 5px 0 var(--shadow); } .promo-btn { width: 100%; text-align: center; } }
+
+/* ---------- BiblioVerse superbar (biblioverse.org/superbar.js) ---------- */
+/* scrolls away with the page, so the site's own sticky bar keeps the top; the gradient follows this site's colours */
+.bvbar { position: relative !important; --accent1: #0b0b0c; --accent2: #7a1023; --accent3: #ff3b5c; }
+.bvbar-panel { --accent1: #ff3b5c; --accent2: #d40f35; --accent3: #ff3b5c; }
+/* the panel reuses the class .tag, which this site styles as a category label */
+.bvbar-panel .tag { display: inline; font-weight: 400; letter-spacing: 0; text-transform: none; margin: 0; background: none; padding: 0; color: var(--p-muted); }
 
 /* ---------- top bar ---------- */
 .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 3px solid var(--rule); }
@@ -395,7 +398,7 @@ footer a:hover { text-decoration-style: wavy; }
 @media print {
   :root:root:root { --bg: #fff; --surface: #fff; --ink: #000; --muted: #444; --muted-s: #444; --line: #bbb; --rule: #000; --shadow: transparent; --block: #000; --block-ink: #fff; --panel: #fff; }
   body { background: #fff; color: #000; font-size: 11pt; }
-  .promo, .bar, .promo-card, .tl-tools, .filters, .strip-tip, .gl-tools, .card.acc > summary::after, .hero::after { display: none !important; }
+  .bar, .promo-card, .tl-tools, .filters, .strip-tip, .gl-tools, .card.acc > summary::after, .hero::after { display: none !important; }
   .strip-wrap { --bg: #fff; --surface: #fff; --ink: #000; --muted: #444; box-shadow: none !important; border: 1px solid #000; }
   main { padding: 0; max-width: none; }
   .hero { padding-block: 0 12px; }
@@ -408,11 +411,7 @@ footer a:hover { text-decoration-style: wavy; }
 </head>
 <body>
 
-<aside aria-label="AI Library · Biblioteca de IAs">
-<a class="promo" href="https://ai.biblioverse.org/" target="_blank" rel="noopener">
-  <span class="promo-in"><span class="promo-tag" data-i="promoTag"></span><span class="promo-txt" data-i="promoBar"></span><span class="promo-go">ai.biblioverse.org ↗</span></span>
-</a>
-</aside>
+<nav id="bvbar" class="bvbar" data-current="aihistory" data-offset="none" aria-label="BiblioVerse" style="position:relative;height:44px;background:linear-gradient(90deg,#0b0b0c,#3d0812)"><a href="https://biblioverse.org" style="color:#fff;line-height:44px;padding:0 14px;font-weight:700;text-decoration:none">BiblioVerse</a></nav>
 <header class="bar">
   <div class="bar-in">
     <a class="brand" href="#top" id="brand" aria-label="AI History Timeline" data-i="brand"><b>AI</b><span class="bh"> History</span><span class="bt"> Timeline</span></a>
@@ -571,8 +570,6 @@ const UI = {
   en: {
     brand: '<b>AI</b><span class="bh"> History</span><span class="bt"> Timeline</span>',
     expandAll: "Expand all", collapseAll: "Collapse all",
-    promoTag: "Recommended",
-    promoBar: "The AI Library: the best AI tools by category, for free",
     promoKick: "Curator's pick",
     promoH: "The AI Library",
     promoP: "Looking for the right AI for a task? The AI Library is a visual, searchable catalogue of the best AI tools by category: text, image, video, voice, music, programming and more. Free, curated by Julio Cesar Prava, part of BiblioVerse.",
@@ -634,8 +631,6 @@ const UI = {
   pt: {
     brand: '<span class="bh">História da </span><b>IA</b>',
     expandAll: "Abrir todos", collapseAll: "Fechar todos",
-    promoTag: "Recomendado",
-    promoBar: "A Biblioteca de IAs: as melhores IAs por categoria, de graça",
     promoKick: "Recomendação do curador",
     promoH: "A Biblioteca de IAs",
     promoP: "Procurando a IA certa para uma tarefa? A Biblioteca de IAs é um catálogo visual e pesquisável das melhores ferramentas de IA por categoria: texto, imagem, vídeo, voz, música, programação e mais. Gratuita, com curadoria de Julio Cesar Prava, parte da BiblioVerse.",

@@ -2495,6 +2495,24 @@ const EVENTS = [
     s: [
       { o: "Terra", h: "Justiça proíbe Meta de usar conteúdo jornalístico sem autorização após ação de ANJ, Abert e Aner", u: "https://www.terra.com.br/economia/justica-proibe-meta-de-usar-conteudo-jornalistico-sem-autorizacao-apos-acao-de-anj-abert-e-aner,6cbc3fabf749d60a46c96d66d7f80325n3rayraz.html" },
       { o: "Estadão", h: "Meta adia regra que permite uso de conteúdo jornalístico por IA sem licença, após revés na Justiça", u: "https://www.estadao.com.br/economia/negocios/meta-adia-regra-que-permite-uso-de-conteudo-jornalistico-por-ia-sem-licenca-apos-reves-na-justica/" }
+    ] },
+  { y: 2026, m: 10, c: "society",
+    t: { en: "Rogue agents on Wikipedia", pt: "Agentes rebeldes na Wikipédia" },
+    d: { en: "The Wikimedia Foundation says AI agents it believes were run by OpenAI edited its wikis without the approval its bot rules require, tried to turn a citation tool and a public notepad into proxies, and sent millions of automated requests that may have helped knock Wikidata's query service partly offline in May. Almost all the edits were tests on sandbox pages, and no systems or data were compromised. The foundation asks AI companies to make their agents identifiable.",
+         pt: "A Fundação Wikimedia diz que agentes de IA que ela acredita serem da OpenAI editaram suas wikis sem a aprovação exigida pelas regras para robôs, tentaram usar uma ferramenta de citações e um bloco de notas público como intermediários e fizeram milhões de requisições automáticas, que podem ter ajudado a derrubar parte do serviço de consultas do Wikidata em maio. Quase todas as edições foram testes em páginas de rascunho, e nenhum sistema ou dado foi comprometido. A fundação pede que as empresas de IA tornem seus agentes identificáveis." },
+    f: { en: ["automated requests", "millions, mainly on Wikidata and Commons"], pt: ["requisições automáticas", "milhões, sobretudo no Wikidata e no Commons"] },
+    s: [
+      { o: "BleepingComputer", h: "Wikimedia: Rogue OpenAI agents behind unauthorized Wikipedia edits", u: "https://www.bleepingcomputer.com/news/security/rogue-openai-agents-behind-potentially-malicious-wikipedia-edits/" },
+      { o: "The Register", h: "Wikimedia Foundation comes forward as latest OpenAI agent assault victim", u: "https://www.theregister.com/ai-and-ml/2026/10/06/wikimedia-foundation-comes-forward-as-latest-openai-agent-assault-victim/5301400" }
+    ] },
+  { y: 2026, m: 10, c: "society",
+    t: { en: "Wikipedia takes the middle ground on AI copyright", pt: "A Wikipédia fica no meio-termo dos direitos autorais da IA" },
+    d: { en: "In the New York Times' copyright case against OpenAI and Microsoft, joined with 11 other suits, the Wikimedia Foundation files a friend-of-the-court brief backing neither side. It argues that training a model on copyrighted text can be fair use, but that pulling articles into chatbot answers through retrieval (RAG) is not, and must respect each publisher's licence. For Wikipedia, that means crediting the volunteers who write it.",
+         pt: "No processo do New York Times contra a OpenAI e a Microsoft, reunido com outras 11 ações, a Fundação Wikimedia entra como amiga da corte sem apoiar nenhum lado. Ela defende que treinar um modelo com textos protegidos pode ser uso justo (fair use), mas que puxar artigos para respostas de chatbot por recuperação (RAG) não é, e precisa respeitar a licença de cada editor. No caso da Wikipédia, isso significa dar crédito aos voluntários que a escrevem." },
+    f: { en: ["lawsuits combined in the case", "12"], pt: ["ações reunidas no caso", "12"] },
+    s: [
+      { o: "The A.V. Club", h: "Wikipedia chooses the middle ground in New York Times and OpenAI lawsuit", u: "https://www.avclub.com/wikipedia-ai-new-york-times-openai" },
+      { o: "The Next Web", h: "Wikimedia asks court to rule AI training fair use, but not chatbot copying", u: "https://thenextweb.com/news/wikimedia-amicus-brief-openai-new-york-times-fair-use-rag" }
     ] }
 ];
 EVENTS.sort((a, b) => (a.y * 12 + a.m) - (b.y * 12 + b.m));

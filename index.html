@@ -560,7 +560,7 @@ footer a:hover { text-decoration-style: wavy; }
 
   <footer>
     <span><span data-i="createdBy"></span> <a href="https://www.linkedin.com/in/juliocesarprava/" target="_blank" rel="noopener">Julio Cesar Prava</a> · <span data-i="builtWithShort"></span></span>
-    <span><span data-i="footNote"></span> · <span data-i="lastUpdatedLabel"></span> <time id="lastUpdated" datetime="2026-11-08"></time></span>
+    <span><span data-i="footNote"></span> · <span data-i="lastUpdatedLabel"></span> <time id="lastUpdated" datetime="2026-11-14"></time></span>
     <span>© 2026 Julio Cesar Prava · <a href="#privacy" id="privLink" data-i="privLink"></a></span>
   </footer>
 </main>
@@ -2542,6 +2542,26 @@ const EVENTS = [
     s: [
       { o: "CNBC", h: "Ray-Ban maker EssilorLuxottica says it more than tripled Meta AI glasses sales in 2025", u: "https://www.cnbc.com/2026/02/11/ray-ban-maker-essilorluxottica-triples-sales-of-meta-ai-glasses.html" },
       { o: "CNN", h: "‘Turn the cameras off:’ London’s growing privacy pushback against smart glasses", u: "https://www.cnn.com/2026/09/22/tech/london-privacy-pushback-meta-smart-glasses" }
+    ] },
+
+  /* ---------- added: Nov 2026 (2) ---------- */
+  { y: 2026, m: 6, c: "idea",
+    t: { en: "AI reads a burned scroll from end to end", pt: "A IA lê um pergaminho queimado de ponta a ponta" },
+    d: { en: "Two years after the first passages, the Vesuvius Challenge virtually unrolls an entire Herculaneum scroll for the first time. PHerc. 1667 had been judged unreadable in the 1980s. CT scans and AI trained to spot ink reveal 20 columns of Greek text, almost 1.5 metres long: probably a Stoic treatise on ethics, impulse and practical wisdom, written in the 2nd or late 3rd century BC.",
+         pt: "Dois anos depois das primeiras passagens, o Vesuvius Challenge desenrola virtualmente, pela primeira vez, um pergaminho inteiro de Herculano. O PHerc. 1667 tinha sido considerado ilegível nos anos 1980. Tomografias e uma IA treinada para achar tinta revelam 20 colunas de texto grego, com quase 1,5 metro: provavelmente um tratado estoico sobre ética, impulso e sabedoria prática, escrito no século II ou no fim do século III a.C." },
+    f: { en: ["text revealed", "20 columns · ~1.5 m"], pt: ["texto revelado", "20 colunas · ~1,5 m"] },
+    s: [
+      { o: "CNN Brasil", h: "IA ajuda a ler papiro carbonizado há quase 2 mil anos", u: "https://www.cnnbrasil.com.br/ciencia/ia-ajuda-a-ler-papiro-carbonizado-ha-quase-2-mil-anos/" },
+      { o: "Scientific American", h: "Ancient Roman scrolls destroyed by Mount Vesuvius digitally unrolled in full for first time", u: "https://www.scientificamerican.com/article/ancient-roman-scrolls-destroyed-by-mount-vesuvius-digitally-unrolled-in-full-for-first-time/" }
+    ] },
+  { y: 2026, m: 11, c: "society",
+    t: { en: "Australia makes frontier AI safety mandatory", pt: "A Austrália torna obrigatória a segurança da IA de fronteira" },
+    d: { en: "After a review of the Medicare case, Australia announces it will write mandatory safety and security rules into law for every frontier AI company that wants to operate there. Companies will have to allow independent evaluation of their models, report incidents quickly and publish their safety frameworks, under a new AI safety regulator able to impose significant penalties. The bill is still being drafted.",
+         pt: "Depois de uma revisão do caso do Medicare, a Austrália anuncia que vai colocar em lei regras obrigatórias de segurança para toda empresa de IA de fronteira que queira operar no país. As empresas terão de permitir a avaliação independente dos seus modelos, avisar rápido sobre incidentes e publicar seus planos de segurança, sob um novo órgão regulador de segurança da IA capaz de aplicar multas pesadas. O projeto de lei ainda está sendo redigido." },
+    f: { en: ["mandatory obligations", "6"], pt: ["obrigações", "6"] },
+    s: [
+      { o: "SBS News", h: "Anthony Albanese announces mandatory reporting after OpenAI's Medicare breach", u: "https://www.sbs.com.au/news/article/ai-safeguards-open-ai-medicare-breach-albanese/2pbsdc5nr" },
+      { o: "Bloomberg", h: "Australia to Create AI Safety Regulator, Mandatory Rules", u: "https://www.bloomberg.com/news/articles/2026-11-10/australia-to-create-ai-safety-regulator-mandatory-safety-rules" }
     ] }
 ];
 EVENTS.sort((a, b) => (a.y * 12 + a.m) - (b.y * 12 + b.m));
@@ -2949,7 +2969,7 @@ function detectLang() {
 }
 let lang = store.get("aitl-lang");
 if (lang !== "pt" && lang !== "en") { lang = detectLang(); store.set("aitl-lang", lang); }
-const LAST_UPDATED = "2026-11-08";
+const LAST_UPDATED = "2026-11-14";
 
 // Theme: light by default; once the visitor picks one, the choice is saved and set as data-theme on <html>.
 let theme = store.get("aitl-theme");

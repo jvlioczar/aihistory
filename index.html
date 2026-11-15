@@ -257,6 +257,17 @@ main { max-width: 1120px; margin: 0 auto; padding-inline: var(--gutter); padding
 .src .hl { display: block; font-family: var(--f-display); font-weight: 600; font-size: 15px; line-height: 1.3; margin-top: 2px; }
 .src a:hover .hl { text-decoration: underline wavy; text-decoration-color: var(--cat); text-underline-offset: 4px; }
 
+/* project links: slab buttons (new tab) and a highlighted recognition */
+.proj { margin-top: 16px; padding: 14px 16px; background: color-mix(in srgb, var(--cat) 8%, transparent); border: 2px solid var(--rule); }
+.proj > .pl { display: block; font-family: var(--f-block); font-size: 11px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); margin-bottom: 10px; }
+.proj-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.proj-btn { display: inline-block; background: var(--block); color: var(--block-ink); text-decoration: none; font-family: var(--f-block); font-size: 13px; font-weight: 900; letter-spacing: 0.03em; text-transform: uppercase; padding: 10px 16px; transition: transform .15s, box-shadow .15s; }
+.proj-btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--accent); }
+.proj-hl { display: block; margin-top: 12px; padding: 10px 14px; text-decoration: none; background: var(--surface); border-left: 6px solid var(--accent); box-shadow: 4px 4px 0 var(--shadow); transform: rotate(-0.6deg); }
+.proj-hl:hover { transform: none; }
+.proj-hl .pl { display: block; font-family: var(--f-block); font-size: 11px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.proj-hl .pt { display: block; font-family: var(--f-display); font-weight: 700; font-size: 17px; line-height: 1.3; margin-top: 3px; }
+
 /* accordion cards: lead sentence + key figure when closed; full story and sources when open */
 .card.acc { padding: 0; }
 .card.acc > summary { list-style: none; cursor: pointer; padding: 18px 22px 16px; position: relative; display: block; }
@@ -560,7 +571,7 @@ footer a:hover { text-decoration-style: wavy; }
 
   <footer>
     <span><span data-i="createdBy"></span> <a href="https://www.linkedin.com/in/juliocesarprava/" target="_blank" rel="noopener">Julio Cesar Prava</a> · <span data-i="builtWithShort"></span></span>
-    <span><span data-i="footNote"></span> · <span data-i="lastUpdatedLabel"></span> <time id="lastUpdated" datetime="2026-11-14"></time></span>
+    <span><span data-i="footNote"></span> · <span data-i="lastUpdatedLabel"></span> <time id="lastUpdated" datetime="2026-11-16"></time></span>
     <span>© 2026 Julio Cesar Prava · <a href="#privacy" id="privLink" data-i="privLink"></a></span>
   </footer>
 </main>
@@ -2562,6 +2573,22 @@ const EVENTS = [
     s: [
       { o: "SBS News", h: "Anthony Albanese announces mandatory reporting after OpenAI's Medicare breach", u: "https://www.sbs.com.au/news/article/ai-safeguards-open-ai-medicare-breach-albanese/2pbsdc5nr" },
       { o: "Bloomberg", h: "Australia to Create AI Safety Regulator, Mandatory Rules", u: "https://www.bloomberg.com/news/articles/2026-11-10/australia-to-create-ai-safety-regulator-mandatory-safety-rules" }
+    ] },
+
+  /* ---------- added: Nov 2026 (3) ---------- */
+  { y: 2019, m: 2, c: "trend", tier: 1,
+    p: { t: "A Style-Based Generator Architecture for Generative Adversarial Networks", a: "T. Karras, S. Laine, T. Aila (Nvidia)", v: "CVPR, 2019", u: "https://arxiv.org/abs/1812.04948" },
+    t: { en: "This person does not exist", pt: "Esta pessoa não existe" },
+    d: { en: "Nvidia researchers create StyleGAN, a GAN that learns the broad traits of a face, such as pose and identity, apart from fine details like freckles and hair. Days after Nvidia releases the code, software engineer Phillip Wang puts it behind a bare web page: each refresh shows a photo of someone who has never existed. He says he wants to make people aware of the technology. The site goes viral, is nominated for the Design Museum's Beazley Designs of the Year and inspires dozens of copies with cats, chairs, words and more, gathered at This X Does Not Exist.",
+         pt: "Pesquisadores da Nvidia criam o StyleGAN, uma GAN que aprende os traços gerais de um rosto, como pose e identidade, separados dos detalhes finos, como sardas e cabelo. Dias depois de a Nvidia liberar o código, o engenheiro de software Phillip Wang o coloca por trás de uma página simples: a cada atualização aparece a foto de alguém que nunca existiu. Ele diz que quer que as pessoas conheçam essa tecnologia. O site viraliza, é indicado ao prêmio Beazley Designs of the Year, do Design Museum de Londres, e inspira dezenas de cópias com gatos, cadeiras, palavras e mais, reunidas no This X Does Not Exist." },
+    f: { en: ["each face starts from", "512 random numbers"], pt: ["cada rosto nasce de", "512 números aleatórios"] },
+    w: { links: [{ u: "https://thisxdoesnotexist.com/", en: "This X Does Not Exist", pt: "This X Does Not Exist" }],
+         hl: { u: "https://designmuseum.org/exhibitions/beazley-designs-of-the-year/digital-2019/this-person-does-not-exist",
+               o: { en: "Design Museum · Beazley Designs of the Year 2019", pt: "Design Museum · Beazley Designs of the Year 2019" },
+               h: { en: "This Person Does Not Exist, by Phil Wang: nominated in the Digital category", pt: "This Person Does Not Exist, de Phil Wang: indicado na categoria Digital" } } },
+    s: [
+      { o: "Fast Company", h: "Refresh this crazy website to create new people who don’t exist", u: "https://www.fastcompany.com/90306749/refresh-this-crazy-website-to-create-new-people-who-dont-exist" },
+      { o: "CNN", h: "How fake faces are being weaponized online", u: "https://www.cnn.com/2020/02/20/tech/fake-faces-deepfake/index.html" }
     ] }
 ];
 EVENTS.sort((a, b) => (a.y * 12 + a.m) - (b.y * 12 + b.m));
@@ -2742,7 +2769,7 @@ const GLOSSARY = [
   { k: "media", t: { en: "GAN", pt: "GAN" },
     d: { en: "Generative adversarial network: two networks compete, one forging images and the other spotting fakes, until the forgeries are convincing. GANs powered the first wave of deepfakes.",
          pt: "Rede adversarial generativa: duas redes competem, uma falsificando imagens e a outra flagrando as falsas, até as falsificações ficarem convincentes. As GANs movimentaram a primeira onda de deepfakes." },
-    see: ["GANs:"] },
+    see: ["GANs:", "This person does not exist"] },
   { k: "media", t: { en: "Text-to-image and text-to-video", pt: "Texto para imagem e texto para vídeo" },
     d: { en: "Tools that turn a written description into a picture (DALL·E, Midjourney, Nano Banana) or a video clip (Sora, Veo, Seedance).",
          pt: "Ferramentas que transformam uma descrição escrita numa imagem (DALL·E, Midjourney, Nano Banana) ou num vídeo (Sora, Veo, Seedance)." },
@@ -2969,7 +2996,7 @@ function detectLang() {
 }
 let lang = store.get("aitl-lang");
 if (lang !== "pt" && lang !== "en") { lang = detectLang(); store.set("aitl-lang", lang); }
-const LAST_UPDATED = "2026-11-14";
+const LAST_UPDATED = "2026-11-16";
 
 // Theme: light by default; once the visitor picks one, the choice is saved and set as data-theme on <html>.
 let theme = store.get("aitl-theme");
@@ -3135,6 +3162,9 @@ function renderTimeline() {
       const paper = ev.p ? `<a class="paper" href="${esc(ev.p.u)}" target="_blank" rel="noopener"><span class="pl">${ev.p.kind === "post" ? (lang === "pt" ? "Post original" : "Original post") : (lang === "pt" ? "Artigo original" : "Original paper")} ·${esc(ev.p.v)} ↗</span><span class="pt">${esc(ev.p.t)}</span><span class="pa">${esc(ev.p.a)}</span></a>` : "";
       const src = `<div class="src">${ev.s.map(s =>
         `<a href="${esc(s.u)}" target="_blank" rel="noopener"><span class="out">${esc(s.o)}</span><span class="hl">${esc(s.h)}</span></a>`).join("")}</div>`;
+      const proj = ev.w ? `<div class="proj"><span class="pl">${lang === "pt" ? "Visitar o projeto" : "Visit the project"}</span>
+        <div class="proj-btns">${ev.w.links.map(l => `<a class="proj-btn" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l[lang] || l.u.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))} ↗</a>`).join("")}</div>
+        ${ev.w.hl ? `<a class="proj-hl" href="${esc(ev.w.hl.u)}" target="_blank" rel="noopener"><span class="pl">★ ${esc(ev.w.hl.o[lang])} ↗</span><span class="pt">${esc(ev.w.hl.h[lang])}</span></a>` : ""}</div>` : "";
       const major = isMajor(ev);
       html += `<li class="stop${major ? "" : " mini"}" id="e${i}" style="--cat: var(--c-${ev.c})"${active.has(ev.c) ? "" : " hidden"}>
         <div class="when"><span class="yr">${ev.y}</span><span class="mo">${dateLabel(ev)}</span></div>
@@ -3148,12 +3178,12 @@ function renderTimeline() {
           </summary>
           <div class="acc-body">
             ${rest ? `<p>${esc(rest)}</p>` : ""}
-            ${paper}${src}
+            ${proj}${paper}${src}
           </div>
         </details>`; })() : `<details class="mini-card">
           <summary><span class="tag">${esc(cat)}</span><h3>${esc(ev.t[lang])}</h3><span class="fv">${esc(fv)}</span></summary>
           <p>${esc(ev.d[lang])}</p>
-          ${paper}${src}
+          ${proj}${paper}${src}
         </details>`}
       </li>`;
     });

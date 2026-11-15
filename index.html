@@ -34,7 +34,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600..900&family=Archivo:wght@500..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" media="print" onload="this.media='all'">
 <style>
 /* Look: an editorial poster. Coral page, black slab labels in a heavy grotesque, big serif headlines, a navy panel
-   for the to-scale strip, wavy rules and a sticker. Layout unchanged: each event is a stop on one of the coloured lines;
+   for the to-scale strip and wavy rules. Layout unchanged: each event is a stop on one of the coloured lines;
    the to-scale strip up top shows every year at once. */
 :root {
   --bg: #ff3b5c;
@@ -177,8 +177,6 @@ a { color: inherit; }
 /* ---------- hero ---------- */
 main { max-width: 1120px; margin: 0 auto; padding-inline: var(--gutter); padding-block: 0 80px; }
 .hero { padding-block: 60px 24px; position: relative; }
-/* the sticker: decorative, hidden from screen readers by the empty alt text after the slash */
-.hero::after { content: "AI"; content: "AI" / ""; position: absolute; right: 1%; top: 56px; width: 124px; height: 124px; border-radius: 50%; background: var(--block); color: var(--block-ink); font: 900 46px/124px var(--f-block); letter-spacing: -0.03em; text-align: center; transform: rotate(-12deg); box-shadow: 0 0 0 7px #fff, 7px 12px 20px rgba(0, 0, 0, 0.35); pointer-events: none; }
 .kicker { font-family: var(--f-block); font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); margin: 0 0 16px; }
 .kicker::before { content: ""; display: inline-block; width: 28px; height: 3px; background: var(--ink); vertical-align: middle; margin-right: 10px; }
 .hero h1 { font-family: var(--f-display); font-weight: 900; font-size: clamp(44px, 8.6vw, 104px); line-height: 0.98; letter-spacing: -0.035em; margin: 0; text-wrap: balance; max-width: 14ch; }
@@ -353,9 +351,6 @@ footer { margin-top: 64px; padding-top: 28px; background: var(--wave) repeat-x l
 footer a { color: var(--ink); font-weight: 800; text-underline-offset: 3px; }
 footer a:hover { text-decoration-style: wavy; }
 
-@media (max-width: 900px) {
-  .hero::after { display: none; }
-}
 @media (max-width: 760px) {
   body { font-size: 16px; }
   .ab-intro { grid-template-columns: minmax(0, 1fr); gap: 16px; }
@@ -409,7 +404,7 @@ footer a:hover { text-decoration-style: wavy; }
 @media print {
   :root:root:root { --bg: #fff; --surface: #fff; --ink: #000; --muted: #444; --muted-s: #444; --line: #bbb; --rule: #000; --shadow: transparent; --block: #000; --block-ink: #fff; --panel: #fff; }
   body { background: #fff; color: #000; font-size: 11pt; }
-  .bar, .promo-card, .tl-tools, .filters, .strip-tip, .gl-tools, .card.acc > summary::after, .hero::after { display: none !important; }
+  .bar, .promo-card, .tl-tools, .filters, .strip-tip, .gl-tools, .card.acc > summary::after { display: none !important; }
   .strip-wrap { --bg: #fff; --surface: #fff; --ink: #000; --muted: #444; box-shadow: none !important; border: 1px solid #000; }
   main { padding: 0; max-width: none; }
   .hero { padding-block: 0 12px; }

@@ -258,6 +258,7 @@ main { max-width: 1120px; margin: 0 auto; padding-inline: var(--gutter); padding
 /* project links: slab buttons (new tab) and a highlighted recognition */
 .proj { margin-top: 16px; padding: 14px 16px; background: color-mix(in srgb, var(--cat) 8%, transparent); border: 2px solid var(--rule); }
 .proj > .pl { display: block; font-family: var(--f-block); font-size: 11px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); margin-bottom: 10px; }
+.proj > .proj-hl:first-child { margin-top: 0; }
 .proj-btns { display: flex; flex-wrap: wrap; gap: 8px; }
 .proj-btn { display: inline-block; background: var(--block); color: var(--block-ink); text-decoration: none; font-family: var(--f-block); font-size: 13px; font-weight: 900; letter-spacing: 0.03em; text-transform: uppercase; padding: 10px 16px; transition: transform .15s, box-shadow .15s; }
 .proj-btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--accent); }
@@ -565,7 +566,7 @@ footer a:hover { text-decoration-style: wavy; }
 
   <footer>
     <span><span data-i="createdBy"></span> <a href="https://www.linkedin.com/in/juliocesarprava/" target="_blank" rel="noopener">Julio Cesar Prava</a></span>
-    <span><span data-i="footNote"></span> · <span data-i="lastUpdatedLabel"></span> <time id="lastUpdated" datetime="2026-11-16"></time></span>
+    <span><span data-i="footNote"></span> · <span data-i="lastUpdatedLabel"></span> <time id="lastUpdated" datetime="2026-11-18"></time></span>
     <span>© 2026 Julio Cesar Prava · <a href="#privacy" id="privLink" data-i="privLink"></a></span>
   </footer>
 </main>
@@ -2579,6 +2580,21 @@ const EVENTS = [
     s: [
       { o: "Fast Company", h: "Refresh this crazy website to create new people who don’t exist", u: "https://www.fastcompany.com/90306749/refresh-this-crazy-website-to-create-new-people-who-dont-exist" },
       { o: "CNN", h: "How fake faces are being weaponized online", u: "https://www.cnn.com/2020/02/20/tech/fake-faces-deepfake/index.html" }
+    ] },
+
+  /* ---------- added: Nov 2026 (4) — no press coverage yet: the essay and the paper stand in as sources ---------- */
+  { y: 2026, m: 10, c: "paper", tier: 2,
+    p: { t: "Organizing Intelligence", a: "A. Imas, A. Koh, S. Legg (Google DeepMind)", v: "arXiv, 2026", u: "https://arxiv.org/abs/2611.05417" },
+    t: { en: "Coordination, not competence", pt: "Coordenação, não competência" },
+    d: { en: "Google DeepMind's Alex Imas, Andrew Koh and co-founder Shane Legg model how AI could reshape firms. Smarter individual agents shift wages and jobs gradually. Abrupt change in market concentration, employment and wages comes only if AI agents learn to coordinate past a threshold, letting a few large AI-only firms take over whole markets. In a quiz of 100 people, pairs matched to cover each other's weak spots beat random pairs by 32%. A theoretical preprint, not yet peer reviewed.",
+         pt: "Alex Imas, Andrew Koh e o cofundador Shane Legg, do Google DeepMind, criam um modelo de como a IA pode mudar as empresas. Agentes individualmente mais capazes mudam salários e empregos aos poucos. A mudança brusca na concentração de mercado, no emprego e nos salários só vem se os agentes de IA aprenderem a se coordenar além de um limiar, deixando poucas empresas grandes, só de IA, dominarem mercados inteiros. Num teste com 100 pessoas, duplas montadas para cobrir os pontos fracos uma da outra foram 32% melhores que duplas aleatórias. É um modelo teórico, ainda sem revisão por pares." },
+    f: { en: ["complementary pairs vs random pairs", "+32%"], pt: ["duplas complementares vs aleatórias", "+32%"] },
+    w: { hl: { u: "https://institute.deepmind.com/essays/the-economics-of-intelligence/",
+               o: { en: "DeepMind Institute · essay", pt: "DeepMind Institute · ensaio" },
+               h: { en: "The Economics of Intelligence: the non-technical version, with four AGI scenarios", pt: "The Economics of Intelligence: a versão sem matemática, com quatro cenários de AGI" } } },
+    s: [
+      { o: "DeepMind Institute", h: "The Economics of Intelligence: How and when does AGI lead to economic transformation?", u: "https://institute.deepmind.com/essays/the-economics-of-intelligence/" },
+      { o: "arXiv", h: "Organizing Intelligence", u: "https://arxiv.org/abs/2611.05417" }
     ] }
 ];
 EVENTS.sort((a, b) => (a.y * 12 + a.m) - (b.y * 12 + b.m));
@@ -2986,7 +3002,7 @@ function detectLang() {
 }
 let lang = store.get("aitl-lang");
 if (lang !== "pt" && lang !== "en") { lang = detectLang(); store.set("aitl-lang", lang); }
-const LAST_UPDATED = "2026-11-16";
+const LAST_UPDATED = "2026-11-18";
 
 // Theme: light by default; once the visitor picks one, the choice is saved and set as data-theme on <html>.
 let theme = store.get("aitl-theme");
@@ -3152,8 +3168,8 @@ function renderTimeline() {
       const paper = ev.p ? `<a class="paper" href="${esc(ev.p.u)}" target="_blank" rel="noopener"><span class="pl">${ev.p.kind === "post" ? (lang === "pt" ? "Post original" : "Original post") : (lang === "pt" ? "Artigo original" : "Original paper")} ·${esc(ev.p.v)} ↗</span><span class="pt">${esc(ev.p.t)}</span><span class="pa">${esc(ev.p.a)}</span></a>` : "";
       const src = `<div class="src">${ev.s.map(s =>
         `<a href="${esc(s.u)}" target="_blank" rel="noopener"><span class="out">${esc(s.o)}</span><span class="hl">${esc(s.h)}</span></a>`).join("")}</div>`;
-      const proj = ev.w ? `<div class="proj"><span class="pl">${lang === "pt" ? "Visitar o projeto" : "Visit the project"}</span>
-        <div class="proj-btns">${ev.w.links.map(l => `<a class="proj-btn" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l[lang] || l.u.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))} ↗</a>`).join("")}</div>
+      const proj = ev.w ? `<div class="proj">${ev.w.links ? `<span class="pl">${lang === "pt" ? "Visitar o projeto" : "Visit the project"}</span>
+        <div class="proj-btns">${ev.w.links.map(l => `<a class="proj-btn" href="${esc(l.u)}" target="_blank" rel="noopener">${esc(l[lang] || l.u.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))} ↗</a>`).join("")}</div>` : ""}
         ${ev.w.hl ? `<a class="proj-hl" href="${esc(ev.w.hl.u)}" target="_blank" rel="noopener"><span class="pl">★ ${esc(ev.w.hl.o[lang])} ↗</span><span class="pt">${esc(ev.w.hl.h[lang])}</span></a>` : ""}</div>` : "";
       const major = isMajor(ev);
       html += `<li class="stop${major ? "" : " mini"}" id="e${i}" style="--cat: var(--c-${ev.c})"${active.has(ev.c) ? "" : " hidden"}>

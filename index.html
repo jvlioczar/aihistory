@@ -566,7 +566,7 @@ footer a:hover { text-decoration-style: wavy; }
 
   <footer>
     <span><span data-i="createdBy"></span> <a href="https://www.linkedin.com/in/juliocesarprava/" target="_blank" rel="noopener">Julio Cesar Prava</a></span>
-    <span><span data-i="footNote"></span> · <span data-i="lastUpdatedLabel"></span> <time id="lastUpdated" datetime="2026-11-18"></time></span>
+    <span><span data-i="footNote"></span> · <span data-i="lastUpdatedLabel"></span> <time id="lastUpdated" datetime="2026-11-20"></time></span>
     <span>© 2026 Julio Cesar Prava · <a href="#privacy" id="privLink" data-i="privLink"></a></span>
   </footer>
 </main>
@@ -2762,6 +2762,10 @@ const GLOSSARY = [
     d: { en: "The most capable models at any given moment, made by a handful of labs. Most safety rules and debates focus on them, because they are the first to show new abilities and risks.",
          pt: "Os modelos mais capazes de cada momento, feitos por um punhado de laboratórios. A maioria das regras e debates de segurança foca neles, porque são os primeiros a mostrar novas capacidades e riscos." },
     see: ["A model held back"] },
+  { k: "language", t: { en: "GEO / AEO", pt: "GEO / AEO" },
+    d: { en: "Generative engine optimization and answer engine optimization: the new SEO. It means shaping websites and content so that chatbots and AI search, such as ChatGPT, Perplexity and Google's AI Overviews, cite them in their answers, rather than just ranking them in a list of links. The name GEO comes from a 2023 paper led by Princeton researchers; AEO is an older term and is often used as a synonym.",
+         pt: "Otimização para mecanismos generativos (GEO) e para mecanismos de resposta (AEO): o novo SEO. É preparar sites e conteúdos para que chatbots e buscas com IA, como o ChatGPT, o Perplexity e os AI Overviews do Google, os citem nas respostas, e não só os coloquem numa lista de links. O nome GEO vem de um artigo de 2023 liderado por pesquisadores de Princeton; AEO é um termo mais antigo e costuma ser usado como sinônimo." },
+    see: ["Google puts AI answers on top of search", "Perplexity bids"] },
 
   /* media */
   { k: "media", t: { en: "Generative AI", pt: "IA generativa" },
@@ -2813,6 +2817,26 @@ const GLOSSARY = [
     d: { en: "An AI that does not just answer but acts: it plans steps and uses tools (browser, email, code, payments) to complete a task on its own. 2026 is being called the age of agents.",
          pt: "Uma IA que não só responde, mas age: planeja etapas e usa ferramentas (navegador, e-mail, código, pagamentos) para concluir uma tarefa sozinha. 2026 está sendo chamado de era dos agentes." },
     see: ["The age of agents", "Moltbook", "An agent that wouldn't take no", "OpenAI hits pause", "AI agents get cute faces"] },
+  { k: "agents", t: { en: "Harness (agent harness)", pt: "Harness (estrutura do agente)" },
+    d: { en: "The software wrapped around an AI model that turns it into a working agent: it runs the cycle of thinking and acting, gives the model tools, files and memory, decides what goes into its context and sets the guardrails. It is often summed up as agent = model + harness. Claude Code and OpenAI's Codex are harnesses, and the same model can do much better or worse depending on the one it runs in.",
+         pt: "O software em volta de um modelo de IA que o transforma num agente que trabalha: ele roda o ciclo de pensar e agir, dá ao modelo ferramentas, arquivos e memória, decide o que entra no seu contexto e define os limites de segurança. Costuma ser resumido como agente = modelo + harness. O Claude Code e o Codex, da OpenAI, são harnesses, e o mesmo modelo pode render muito mais ou muito menos dependendo de qual usa." },
+    see: ["Claude Code: AI that writes", "The age of agents"] },
+  { k: "agents", t: { en: "MCP (Model Context Protocol)", pt: "MCP (Model Context Protocol)" },
+    d: { en: "An open standard, launched by Anthropic in November 2024, for connecting AI models to outside tools and data such as files, databases, calendars and apps. It is often called the USB-C of AI: a connector built once as an MCP server works with any compatible assistant. OpenAI, Google and Microsoft adopted it, and in December 2025 Anthropic handed it to the Linux Foundation's new Agentic AI Foundation.",
+         pt: "Um padrão aberto, lançado pela Anthropic em novembro de 2024, para conectar modelos de IA a ferramentas e dados externos, como arquivos, bancos de dados, agendas e aplicativos. Costuma ser chamado de USB-C da IA: um conector feito uma vez como servidor MCP funciona com qualquer assistente compatível. OpenAI, Google e Microsoft o adotaram, e em dezembro de 2025 a Anthropic o passou para a nova Agentic AI Foundation, da Linux Foundation." },
+    see: ["The age of agents"] },
+  { k: "agents", t: { en: "Skills (agent skills)", pt: "Skills (habilidades de agentes)" },
+    d: { en: "Packaged know-how that an AI agent loads only when a task calls for it: a folder with written instructions and, sometimes, scripts or templates, for jobs like building a spreadsheet, following a company's style guide or publishing a website. Because only a short description stays in view until the skill is needed, an agent can carry many of them. Anthropic introduced Agent Skills in 2025 and published the format as an open standard.",
+         pt: "Conhecimento empacotado que um agente de IA só carrega quando a tarefa pede: uma pasta com instruções escritas e, às vezes, scripts ou modelos, para trabalhos como montar uma planilha, seguir o manual de estilo de uma empresa ou publicar um site. Como só uma descrição curta fica à vista até a skill ser necessária, um agente pode levar muitas delas. A Anthropic lançou as Agent Skills em 2025 e publicou o formato como padrão aberto." },
+    see: ["Claude Code: AI that writes"] },
+  { k: "agents", t: { en: "Loop engineering", pt: "Loop engineering (engenharia de loops)" },
+    d: { en: "Designing the repeating cycle that keeps AI agents working toward a goal with little human help, instead of writing one prompt at a time: an agent acts, checks the result, often has another agent review it, and goes again, on a schedule or whenever something happens. The term spread among developers in 2026 as the next step after prompt engineering and context engineering.",
+         pt: "Projetar o ciclo que se repete e mantém agentes de IA trabalhando rumo a um objetivo com pouca ajuda humana, em vez de escrever um prompt de cada vez: um agente age, confere o resultado, muitas vezes outro agente revisa, e o ciclo recomeça, num horário marcado ou sempre que algo acontece. O termo se espalhou entre desenvolvedores em 2026 como o passo seguinte à engenharia de prompts e de contexto." },
+    see: ["Claude Code: AI that writes"] },
+  { k: "agents", t: { en: "Computer use", pt: "Computer use (uso do computador)" },
+    d: { en: "An AI that operates a computer the way a person does: it looks at the screen, moves the mouse, clicks and types, so it can use ordinary apps and websites that were never built to talk to AI. Anthropic released it in October 2024 and OpenAI followed with Operator in January 2025. New models now compete on how well they do it.",
+         pt: "Uma IA que opera um computador como uma pessoa: olha a tela, move o mouse, clica e digita, e assim consegue usar aplicativos e sites comuns que nunca foram feitos para conversar com IA. A Anthropic lançou o recurso em outubro de 2024 e a OpenAI veio em seguida com o Operator, em janeiro de 2025. Os modelos novos agora competem em quem faz isso melhor." },
+    see: ["GPT-6 Astra"] },
   { k: "agents", t: { en: "Mosaic intelligence", pt: "Inteligência em mosaico" },
     d: { en: "The collective ability that emerges when people with complementary skills work together, each filling the others' gaps, so the team does better than any of its members. Google DeepMind researchers use the term to explain why AI has not yet transformed the economy: human skills are “jagged” in different directions, while copies of one AI model are jagged in the same way, so another copy adds capacity but not breadth. A team of complementary humans can still beat a single, more capable AI, until AI agents learn to coordinate as well as people do.",
          pt: "A capacidade coletiva que surge quando pessoas com habilidades complementares trabalham juntas, cada uma cobrindo as falhas das outras, de modo que a equipe rende mais do que qualquer um dos seus membros. Pesquisadores do Google DeepMind usam o termo para explicar por que a IA ainda não transformou a economia: as habilidades humanas são “irregulares” em direções diferentes, enquanto as cópias de um mesmo modelo de IA são irregulares do mesmo jeito, então mais uma cópia acrescenta capacidade, mas não variedade. Uma equipe de pessoas complementares ainda pode vencer uma IA sozinha e mais capaz, até que os agentes de IA aprendam a se coordenar tão bem quanto as pessoas." },
@@ -2854,7 +2878,7 @@ const GLOSSARY = [
   { k: "society", t: { en: "AGI (artificial general intelligence)", pt: "AGI (inteligência artificial geral)" },
     d: { en: "A hypothetical AI that can learn and do almost any intellectual task a person can, not just one narrow job. It is the stated goal of OpenAI, Google DeepMind and others, and there is no agreed definition.",
          pt: "Uma IA hipotética capaz de aprender e fazer quase qualquer tarefa intelectual que uma pessoa faz, e não só uma função específica. É o objetivo declarado da OpenAI, do Google DeepMind e de outros, e não há definição consensual." },
-    see: ["OpenAI is founded"] },
+    see: ["OpenAI is founded", "GPT-6 Astra", "Coordination, not competence"] },
   { k: "society", t: { en: "Superintelligence", pt: "Superinteligência" },
     d: { en: "AI that is far smarter than the best humans in practically every field. Some lab leaders say it could come within years; many researchers want it banned until it can be shown to be controllable.",
          pt: "Uma IA muito mais inteligente que os melhores humanos em praticamente todas as áreas. Alguns líderes de laboratórios dizem que pode chegar em poucos anos; muitos pesquisadores querem proibi-la até que se prove controlável." },
@@ -3006,7 +3030,7 @@ function detectLang() {
 }
 let lang = store.get("aitl-lang");
 if (lang !== "pt" && lang !== "en") { lang = detectLang(); store.set("aitl-lang", lang); }
-const LAST_UPDATED = "2026-11-18";
+const LAST_UPDATED = "2026-11-20";
 
 // Theme: light by default; once the visitor picks one, the choice is saved and set as data-theme on <html>.
 let theme = store.get("aitl-theme");
